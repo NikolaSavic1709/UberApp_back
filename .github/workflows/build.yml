@@ -31,19 +31,9 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Change directory1
-        run: cd /home/runner/work/UberApp_back/UberApp_back/ihor
-      - name: Print current directory1
-        working-directory: ./ihor
-        run: pwd
-      - name: Change directory2
-        run: cd ./ihor
 
-      - name: Print current directory2
-        run: pwd
-      - name: List files in directory
-        run: ls -la
       - name: Build and analyze
+        working-directory: ./ihor
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
