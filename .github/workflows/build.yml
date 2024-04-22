@@ -33,6 +33,10 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Change directory
         run: cd ihor
+      - name: Print current directory
+        run: pwd
+      - name: List files in directory
+        run: ls -la
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
