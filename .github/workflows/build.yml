@@ -34,6 +34,7 @@ jobs:
       - name: Change directory1
         run: cd /home/runner/work/UberApp_back/UberApp_back/ihor
       - name: Print current directory1
+        working-directory: ./ihor
         run: pwd
       - name: Change directory2
         run: cd ./ihor
